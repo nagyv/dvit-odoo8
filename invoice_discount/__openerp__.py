@@ -5,7 +5,7 @@
     'summary': "Show Discount Total and Total before Discount on Invoices. ",
     'description':"Show Discount Total and Total before Discount on Invoices.",
     'author': 'M.Hagag@DVIT.ME',
-    'website': 'http://www.openerp.com',
+    'website': 'http://www.dvit.me',
     'depends': ['account_voucher'],
     'data': [
         'discount_view.xml',
