@@ -10,6 +10,7 @@
     'depends': ['account_voucher'],
     'data': [
         'discount_view.xml',
+        'views/report_discount.xml',
     ],
     'installable': True,
     'auto_install': False,
