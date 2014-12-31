@@ -3,6 +3,7 @@
 {
     'name': 'Sale Discount',
     'version': '1.0',
+        'sequence': 1,
     'category': 'Sales Management',
     'summary': 'Show discount total and total before discount on sales orders.',
     'description':"Show Discount Total and Total before Discount on Sales Orders.",

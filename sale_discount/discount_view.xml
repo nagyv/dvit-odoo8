@@ -8,15 +8,15 @@
 
 	<field name="arch" type="xml">
 		<xpath expr="//tree[@string='Sales Order Lines']//field[@name='price_unit']" position="after">
-	                <field name="total_line"/>
+	                <field name="total_line" groups="sale.group_discount_per_so_line" />
 		</xpath>
         <xpath expr="//tree[@string='Sales Order Lines']//field[@name='discount']" position="after">
-                        <field name="disc_line"/>
+                        <field name="disc_line" groups="sale.group_discount_per_so_line" />
 		</xpath>
 		
 		 <xpath expr="//group[@name='sale_total']//field[@name='amount_untaxed']" position="before">
-		 				<field name="total_b4_disc"/>
-                        <field name="disc_total"/>
+		 				<field name="total_b4_disc" groups="sale.group_discount_per_so_line" />
+                        <field name="disc_total" groups="sale.group_discount_per_so_line" />
 		</xpath>
 		
 		

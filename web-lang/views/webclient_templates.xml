@@ -1,0 +1,16 @@
+<openerp>
+    <data>
+	<template id="web_rtl" inherit_id="web.webclient_bootstrap">
+		 
+		<xpath expr="//t[@t-call-assets='web.assets_backend']" 
+			position="after">
+				
+				<link rel="stylesheet" t-attf-href="/web-lang/static/src/css/#{lang}.css" />
+			
+		</xpath>
+ 		
+	</template>
+	</data>
+</openerp>
+
+
