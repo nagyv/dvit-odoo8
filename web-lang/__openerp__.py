@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 
 {
-    'name': 'Web client RTL',
+    'name': 'Web-lang',
     'version': '1.0',
         'sequence': 1,
     'category': 'Web',
-    'summary': 'Web client RTL',
-    'description':"Web client RTL",
+    'summary': 'Web client lang based CSS',
+    'description':"Multi-lang based CSS support for Web client to allow setting language direction (RTL,LTR) and fonts, colors.",
     'author': 'M.Hagag@DVIT.ME',
     'website': 'https://www.dvit.me',
     'depends': ['web',
