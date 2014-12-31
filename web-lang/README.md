@@ -1,5 +1,5 @@
-odoo8
-=====
+dvit-odoo8
+===========
 
 This module ( built for odoo v8, may work on v7 ) adds multi-language CSS files support.
 

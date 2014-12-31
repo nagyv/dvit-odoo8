@@ -1,5 +1,5 @@
-odoo8
-=====
+dvit-odoo8
+============
 
 Module for Odoo8 (may run on v.7) to show discount details on Qoutations/Orders:
 
