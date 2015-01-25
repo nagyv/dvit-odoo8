@@ -20,19 +20,7 @@
             }
             
         </template>
-        <template id="external_layout_header" inherit_id="report.external_layout_header">
-            
-            <xpath expr="//div[@class='header']" position="attributes">
-                <attribute name="t-att-class">'header ' + lang_direction</attribute>
-            </xpath>
-        </template>
-
-        <template id="external_layout_footer" inherit_id="report.external_layout_footer">
-
-            <xpath expr="//div[@class='footer']" position="attributes">
-                <attribute name="t-att-class">'footer ' + lang_direction</attribute>
-            </xpath>
-        </template>
+ 
         <template id="html_container" inherit_id="report.html_container">
             
             <xpath expr="//t[@t-set='body_classname']" position="replace">
