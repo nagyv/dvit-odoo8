@@ -14,3 +14,4 @@ report-rtl: based on barsi's report-rtl to print reports in RTL.
 
 web-lang: adds support for language based CSS files to support lang direction and fonts.
 
+Auto Hide Leftbar: will autohide the left menu and will show on hover.

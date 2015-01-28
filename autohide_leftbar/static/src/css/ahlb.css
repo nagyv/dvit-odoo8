@@ -1,8 +1,8 @@
 
-.openerp .oe_leftbar > div a.oe_logo img { width:45px !important; height: 100px;  }
-.openerp .oe_leftbar:hover > div a.oe_logo img { width: 100% !important; transition: width 1s; }
-.openerp .oe_leftbar > div { width: 45px !important; }
-.openerp .oe_leftbar:hover > div { width: 220px !important; transition: width 1s; }
-.openerp .oe_leftbar > div > div > div > div.oe_secondary_menus_container {background-color: #333;}
+.openerp .oe_leftbar > div a.oe_logo img { width:20px !important; height: 100px;  }
+.openerp .oe_leftbar:hover > div a.oe_logo img { width: 100% !important; transition: width .5s; }
+.openerp .oe_leftbar > div { height:1400px; width: 25px !important; }
+.openerp .oe_leftbar:hover > div { height:100%; width: 220px !important; transition: all .1s; }
+.openerp .oe_leftbar > div > div > div > div.oe_secondary_menus_container {background-color: #666;}
 .openerp .oe_leftbar:hover > div > div > div > div.oe_secondary_menus_container {transition: background-color .1s; background-color: initial;}
 
