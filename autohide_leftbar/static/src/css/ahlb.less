@@ -1,0 +1,31 @@
+@closedWidth: 70px;
+@openWidth: 200px;
+
+.openerp .oe_leftbar {
+ > div {
+    width: @closedWidth !important;
+    a.oe_logo img { 
+	width: @closedWidth !important; 
+    }
+ }
+ 
+ 
+ &:hover > div {
+    width: @openWidth+20px !important; 
+    transition: all .1s;
+    a.oe_logo img { 
+	width: @openWidth !important; 
+	transition: width .5s; 
+    }
+    div.oe_secondary_menus_container {
+	transition: background-color .1s; 
+	background-color: initial;
+    }
+ }
+}
+
+.openerp .oe_secondary_menu_section {
+    white-space: nowrap !important;  
+    overflow: hidden !important; 
+    text-overflow: ellipsis !important; 
+}
