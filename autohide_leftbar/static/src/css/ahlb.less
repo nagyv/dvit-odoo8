@@ -1,11 +1,12 @@
 @closedWidth: 70px;
 @openWidth: 200px;
+@imgOffset: -130px;
 
 .openerp .oe_leftbar {
  > div {
     width: @closedWidth !important;
     a.oe_logo img { 
-	width: @closedWidth !important; 
+	margin-left: @imgOffset;
     }
  }
  
@@ -14,7 +15,7 @@
     width: @openWidth+20px !important; 
     transition: all .1s;
     a.oe_logo img { 
-	width: @openWidth !important; 
+	margin-left: 0px;
 	transition: width .5s; 
     }
     div.oe_secondary_menus_container {
