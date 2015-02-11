@@ -1,4 +1,4 @@
-/*.announcement_bar{color:#000;display:none!important;visibility:hidden;background:#000}*/
+.announcement_bar{color:#000;display:none!important;visibility:hidden;background:#000}
 .openerp .oe_application .oe_breadcrumb_title>*{font-size:16px!important}
 .openerp .oe_view_manager table.oe_view_manager_header h2{line-height:initial!important}
 .openerp .oe_searchview .oe_searchview_facets{min-height:initial!important}
@@ -9,4 +9,3 @@
 .openerp .oe_bold .oe_list_button_import{font-size:12px!important}
 .openerp .oe_mail_wall .oe_mail {width: 70% !important; }
 .openerp .oe_mail_wall .oe_mail_wall_aside {width: 20% !important; }
-
