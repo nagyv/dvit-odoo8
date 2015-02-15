@@ -2,7 +2,7 @@
 <openerp>
     <data>
 	<record id="sale_discount_form" model="ir.ui.view">
-	<field name="name">sale.order.form</field>
+	<field name="name">sale_discount.order.form</field>
 	<field name="model">sale.order</field>
 	<field name="inherit_id" ref="sale.view_order_form"/>
 
