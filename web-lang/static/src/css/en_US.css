@@ -9,3 +9,4 @@
 .openerp .oe_bold .oe_list_button_import{font-size:12px!important}
 .openerp .oe_mail_wall .oe_mail {width: 70% !important; }
 .openerp .oe_mail_wall .oe_mail_wall_aside {width: 20% !important; }
+.openerp .oe_form_sheet_width { max-width: 95% !important; }

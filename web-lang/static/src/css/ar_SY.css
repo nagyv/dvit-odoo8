@@ -524,3 +524,8 @@ th,.openerp td{text-align:right}
 .openerp .oe_bold .oe_list_button_import{font-size:12px!important}
 .openerp .oe_mail_wall .oe_mail {width: 70% !important; }
 .openerp .oe_mail_wall .oe_mail_wall_aside {width: 20% !important; }
+.openerp .oe_form_sheet_width { max-width: 95% !important; }
+.ui-menu { width: auto !important; }
+.openerp .oe_bank_statement_reconciliation .oe_bank_statement_reconciliation_line .accounting_view caption button { float: left; }
+.openerp .oe_bank_statement_reconciliation .oe_bank_statement_reconciliation_line .accounting_view caption .tip_reconciliation_not_balanced { float: left;}
+
