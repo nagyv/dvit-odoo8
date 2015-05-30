@@ -1,14 +1,10 @@
 <openerp>
     <data>
-	<template id="autohide_leftbar" inherit_id="web.webclient_bootstrap">
-		 
-		<xpath expr="//t[@t-call-assets='web.assets_backend']" 
+	<template id="o7style" inherit_id="web.webclient_bootstrap">
+		<xpath expr="//script" 
 			position="after">
-				
 				<link rel="stylesheet" t-attf-href="/o7style/static/src/css/o7style.css" />
-			
 		</xpath>
- 		
 	</template>
 	</data>
 </openerp>
