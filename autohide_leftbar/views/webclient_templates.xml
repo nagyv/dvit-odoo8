@@ -2,7 +2,7 @@
     <data>
 	<template id="autohide_leftbar" inherit_id="web.webclient_bootstrap">
 		 
-		<xpath expr="//t[@t-call-assets='web.assets_backend']" 
+		<xpath expr="//script" 
 			position="after">
 				
 				<link rel="stylesheet" t-attf-href="/autohide_leftbar/static/src/css/ahlb.css" />
