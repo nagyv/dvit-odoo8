@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 {
-    'name': 'Web-lang',
+    'name': 'Web_lang',
     'version': '1.0',
         'sequence': 1,
     'category': 'Web',
