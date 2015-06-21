@@ -1,10 +1,8 @@
-.openerp .oe_leftbar > div a.oe_logo img { width:70px; height: 100px;  transition: .75s ease-in-out 1s;}
+.openerp .oe_leftbar > div a.oe_logo img { width:50px; height: 100px;  transition: .75s ease-in-out 1s;}
 .openerp .oe_leftbar:hover > div a.oe_logo img { width: 200px; transition: .25s ease-in-out .5s; }
-.openerp .oe_leftbar > div { width: 75px; transition: .75s ease-in-out 1s;}
-.openerp .oe_leftbar:hover > div { width: 220px; transition: .25s ease-in-out .5s; }
+.openerp .oe_leftbar > div { width: 50px; transition: .75s ease-in-out 1s;}
+.openerp .oe_leftbar:hover > div { width: 200px; transition: .25s ease-in-out .5s; }
 .openerp .oe_leftbar > div > div > div > div.oe_secondary_menus_container 
 {overflow: hidden; background-color: #bbf; transition: .75s ease-in-out 1s;}
 .openerp .oe_leftbar:hover > div > div > div > div.oe_secondary_menus_container 
 {overflow: auto; background-color: initial; transition: .25s ease-in-out .5s;}
-
-/*.openerp .oe_secondary_menu_section {white-space: nowrap;  overflow: hidden; text-overflow: ellipsis; }*/
