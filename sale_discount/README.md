@@ -10,3 +10,5 @@ in Order: Order Total before discount - Discount value.
 This Module Depends (not techincally) on invoice_discount .
 
 You must enable discounts on sale settings.
+
+For support, Plz contact us: http://dvit.me/
