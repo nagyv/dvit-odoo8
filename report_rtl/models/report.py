@@ -22,18 +22,21 @@ from openerp.osv import orm, osv, fields
 from openerp.tools.translate import _
 import openerp
 from openerp.http import request
-
 import lxml.html
 import time
 import logging
-
-# remove after issue #1227 been merged
-import subprocess
-import tempfile
-from os import name as OsName
-from shutil import rmtree
+import re
+import time
 import base64
-_logger = logging.getLogger(__name__)
+import logging
+import tempfile
+import lxml.html
+import os
+import subprocess
+from contextlib import closing
+from distutils.version import LooseVersion
+from functools import partial
+from pyPdf import PdfFileWriter, PdfFileReader
 
 class Report(orm.Model):
 
@@ -69,7 +72,6 @@ class Report(orm.Model):
         lang_obj = self.pool['res.lang'].browse(cr, uid, lang_id, context=context)
         lang_dir = str(lang_obj.direction)
         
-        values['lang'] = lang
         values['lang_dir'] = lang_dir
 
 
