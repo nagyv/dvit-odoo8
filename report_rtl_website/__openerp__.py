@@ -19,4 +19,17 @@
 ##############################################################################
 
 
-import models
+{
+    'name': 'Report RTL - fix website',
+    'version': '1.0',
+    'author': 'Mohammed M. Hagag - m.hagag@dvit.me',
+    'sequence': 1,
+    'summary': 'Report printing in RTL direction',
+    'description':
+        """Install only if you have website installed and want to fix RTL report printing .""",
+    'depends': ['report','website_report','report_rtl'],
+    'auto_install': False,
+    'data': [
+        'views/layout.xml',
+    ],
+}

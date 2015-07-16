@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Odoo RTL support
-#    Copyright (C) 2014 Mohammed Barsi.
+#    Copyright (C) 2015 Mohammed M. Hagag.
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,8 +18,7 @@
 #
 ##############################################################################
 
-
-from openerp.osv import orm, osv
+from openerp.osv import orm, osv, fields
 from openerp.tools.translate import _
 import openerp
 from openerp.http import request
@@ -37,50 +35,60 @@ from shutil import rmtree
 import base64
 _logger = logging.getLogger(__name__)
 
-import openerp.addons.report.models.report as report
+class Report(orm.Model):
 
-class Report2(report.Report):
-
-  #  _inherit = 'report'
-
+    _inherit = 'report'
+    
     def render(self, cr, uid, ids, template, values=None, context=None):
+
         if values is None:
             values = {}
 
         if context is None:
             context = {}
-        langs = self.pool.get('res.lang').get_languages_dir(cr, uid, [], context=context)
-        values['lang_direction'] = langs.get(context.get('lang', 'en_US'), 'ltr')
+        
+        context = dict(context, inherit_branding=True)  # Tell QWeb to brand the generated html
 
         view_obj = self.pool['ir.ui.view']
 
         def translate_doc(doc_id, model, lang_field, template):
-            ctx = context.copy()
-            doc = self.pool[model].browse(cr, uid, doc_id, context=ctx)
-            qcontext = values.copy()
-            # Do not force-translate if we chose to display the report in a specific lang
-            if ctx.get('translatable') is True:
-                qcontext['o'] = doc
-            else:
-                # Reach the lang we want to translate the doc into
-                ctx['lang'] = eval('doc.%s' % lang_field, {'doc': doc})
-                qcontext['o'] = self.pool[model].browse(cr, uid, doc_id, context=ctx)
-                qcontext['lang_direction'] = langs.get(ctx['lang'], 'ltr')
-                context['lang'] = ctx['lang']
-            return view_obj.render(cr, uid, template, qcontext, context=ctx)
+            return self.translate_doc(cr, uid, doc_id, model, lang_field, template, values, context=context)
+        
+        ctx = context.copy()
+        model=values['doc_model']
+        doc_id=values['doc_ids'][0]
+        doc = self.pool[model].browse(cr, uid, doc_id, context=ctx)
+        
+        try:
+             lang = str(doc.partner_id.lang)
+        except AttributeError:
+             lang = context.get('lang')
+            
+        lang_id = self.pool['res.lang'].search(cr, uid, 
+                    [('code', '=', lang),('active','=',True)], context=context)
+        lang_obj = self.pool['res.lang'].browse(cr, uid, lang_id, context=context)
+        lang_dir = str(lang_obj.direction)
+        
+        values['lang'] = lang
+        values['lang_dir'] = lang_dir
+
 
         user = self.pool['res.users'].browse(cr, uid, uid)
         website = None
         if request and hasattr(request, 'website'):
-            website = request.website
+            if request.website is not None:
+                website = request.website
+                context = dict(context, translatable=context.get('lang') != request.website.default_lang_code)
+        
         values.update(
             time=time,
+            context_timestamp=lambda t: fields.datetime.context_timestamp(cr, uid, t, context),
             translate_doc=translate_doc,
-            editable=True,  # Will active inherit_branding
+            editable=True,
             user=user,
             res_company=user.company_id,
             website=website,
-            editable_no_editor=True,
         )
         return view_obj.render(cr, uid, template, values, context=context)
-
+    
+    

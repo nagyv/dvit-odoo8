@@ -1,10 +1,8 @@
 dvit-odoo8 modules
 ==================
 
-Based on Barsi work, Thnak him for his great work.
+**Note: If you have website installed you must install report_rtl_website also .**
 
-This module is a modified copy of https://github.com/barsi/odoo-rtl/tree/master/report_rtl 
-
-to work standalone without depending on Barsi's web-rtl module and fixing a bug in printing reports.
+A very simple and clean module to allow printing reports in RTL.
 
 For support, Plz contact us: http://dvit.me/

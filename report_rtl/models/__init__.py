@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Odoo RTL support
-#    Copyright (C) 2014 Mohammed Barsi.
+#    Copyright (C) 2015 Mohamed M. Hagag.
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,6 +18,5 @@
 #
 ##############################################################################
 
-import ir_qweb
-import res_lang
+
 import report

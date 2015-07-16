@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Odoo RTL support
-#    Copyright (C) 2014 Mohammed Barsi.
+#    Copyright (C) 2015 Mohamed M. Hagag.
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,18 +18,18 @@
 #
 ##############################################################################
 
+
 {
     'name': 'Report RTL',
     'version': '1.0',
-    'author': 'Mohammed Barsi',
-    'sequence': 4,
-    'summary': 'Report RTL (Right to Left) layout',
+    'author': 'Mohammed M. Hagag - m.hagag@dvit.me',
+    'sequence': 1,
+    'summary': 'Report printing in RTL direction',
     'description':
         """
-Adding RTL (Right to Left) Support for Reports.
-===============================================
-
-This module provides a propper RTL support for Odoo's new report engine.
+Report printing in RTL direction
+========================
+**Note: if you have website installed install Report RTL website**
         """,
     'depends': ['report'],
     'auto_install': False,
