@@ -23,7 +23,7 @@
     'version': '1.1',
     'sequence': 1,
     'author': 'DVIT.ME',
-    'category': 'Human Resources',
+    'category': 'Localization',
     'description': "Payroll for Arabic countries and Saudi Arabia.",
     'website': 'http://www.dvit.me',
     'depends': ['l10n_sa','hr_payroll','hr_payroll_account'],
