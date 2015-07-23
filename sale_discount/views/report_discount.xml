@@ -2,41 +2,26 @@
 <openerp>
     <data>
 	<template id="sale_discount_report" inherit_id="sale.report_saleorder_document">
-		 
-		<xpath expr="//table[1]//th[text()='Disc.(%)']" position="replace">
-			<th t-if="o.disc_total != 0.0" 
-				groups="sale.group_discount_per_so_line" >Total</th>
-			<th t-if="o.disc_total != 0.0" 
-				groups="sale.group_discount_per_so_line" >Disc.(%)</th>
-			<th t-if="o.disc_total != 0.0" class="text-right" 
-				groups="sale.group_discount_per_so_line" >Disc.</th>
+		<xpath expr="//th[text()='Disc.(%)']" position="before">
+			<th t-if="o.disc_total != 0.0"  groups="sale.group_discount_per_so_line" >Total</th>
+			<th t-if="o.disc_total != 0.0" class="text-right" groups="sale.group_discount_per_so_line" >Disc.</th>
 		</xpath>
-	
-		<xpath expr="//tbody//td[@groups='sale.group_discount_per_so_line']" position="replace">
+		<xpath expr="//td[@groups='sale.group_discount_per_so_line']" position="before">
 			 <td  t-if="o.disc_total != 0.0" groups="sale.group_discount_per_so_line"> 
 			 	<span t-field="l.total_line"/></td>
-			<td t-if="o.disc_total != 0.0" groups="sale.group_discount_per_so_line">
-                            <span t-field="l.discount"/>
-                        </td>
- 			<td  t-if="o.disc_total != 0.0" class="text-right" 
- 				groups="sale.group_discount_per_so_line" > <span t-field="l.disc_line"/></td>		
+ 			<td  t-if="o.disc_total != 1.0" class="text-right" groups="sale.group_discount_per_so_line" > 
+				<span t-field="l.disc_line"/></td>		
  		</xpath>
-		
  		<xpath expr="//table//tr[@class='border-black']" position="before">
- 				
- 			<tr class="border-black" t-if="o.disc_total != 0.0" 
- 				groups="sale.group_discount_per_so_line" >
+ 			<tr class="border-black" t-if="o.disc_total != 0.0" groups="sale.group_discount_per_so_line" >
                   <td> Total Before Discount </td>
                   <td class="text-right"><span t-field="o.total_b4_disc" /> </td>
              </tr>
-            <tr t-if="o.disc_total != 0.0" 
-            	groups="sale.group_discount_per_so_line" >
+            <tr t-if="o.disc_total != 0.0" groups="sale.group_discount_per_so_line" >
                   <td> Total Discount</td>
                   <td class="text-right"><span t-field="o.disc_total" /> </td>
             </tr>
-
  		</xpath>
- 		
 	</template>
 	</data>
 </openerp>
