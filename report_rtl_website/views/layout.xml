@@ -3,7 +3,7 @@
 <openerp>
     <data>
 
-   <template id="layout" inherit_id="website_report.layout">
+   <template priority="36" id="layout" inherit_id="website_report.layout">
 
             <xpath expr="//head" position="inside">
                 <style type="text/css" t-if="lang_dir == 'rtl'">

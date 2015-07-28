@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-	<template priority="999" id="invoice_discount_report" inherit_id="account.report_invoice_document">
+	<template priority="26" id="invoice_discount_report" inherit_id="account.report_invoice_document">
 		 
 		<xpath expr="//th[@groups='sale.group_discount_per_so_line']" position="before">
 			<th  	groups="sale.group_discount_per_so_line">Total</th>

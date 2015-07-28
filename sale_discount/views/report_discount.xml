@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-	<template priority="999" id="sale_discount_report" inherit_id="sale.report_saleorder_document">
+	<template priority="26" id="sale_discount_report" inherit_id="sale.report_saleorder_document">
 		<xpath expr="//th[@groups='sale.group_discount_per_so_line']" position="before">
 			<th   groups="sale.group_discount_per_so_line" >Total</th>
 			<th  class="text-right" groups="sale.group_discount_per_so_line" >Disc.</th>
