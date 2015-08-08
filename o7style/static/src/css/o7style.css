@@ -9,4 +9,5 @@ ul .dropdown-menu{background-image:linear-gradient(to bottom,#646060,#262626)}
 .dropdown-menu>li>a:hover{color:#fff;background:#333}
 /*.openerp .oe_leftbar>div .oe_footer{display:none!important}*/
 .openerp .oe_application .oe_breadcrumb_title>*{font-size:16px!important}
+.openerp .oe_followers button.oe_follower { width: 120px; }
 /*----------------- OpenERP 7 Style -------------*/
