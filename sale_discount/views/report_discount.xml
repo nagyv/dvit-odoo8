@@ -10,7 +10,7 @@
 			 <td  t-if="o.disc_total != 0.0" groups="sale.group_discount_per_so_line"> 
 			 	<span t-field="l.total_line"/></td>
  			<td  t-if="o.disc_total != 0.0" class="text-right" groups="sale.group_discount_per_so_line" > 
-				<span t-field="l.disc_line"/></td>		
+				<span t-field="l.disc_line"/></td>
  		</xpath>
  		<xpath expr="//table//tr[@class='border-black']" position="before">
  			<tr t-if="o.disc_total != 0.0" class="border-black"  groups="sale.group_discount_per_so_line" >
