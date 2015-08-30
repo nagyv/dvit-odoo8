@@ -7,7 +7,7 @@
 			<th  class="text-right" groups="sale.group_discount_per_so_line" >Disc.</th>
 		</xpath>
 		<xpath expr="//td[@groups='sale.group_discount_per_so_line']" position="before">
-			 <td   groups="sale.group_discount_per_so_line"> 
+			 <td  t-if="o.disc_total != 0.0" groups="sale.group_discount_per_so_line"> 
 			 	<span t-field="l.total_line"/></td>
  			<td  t-if="o.disc_total != 0.0" class="text-right" groups="sale.group_discount_per_so_line" > 
 				<span t-field="l.disc_line"/></td>		
