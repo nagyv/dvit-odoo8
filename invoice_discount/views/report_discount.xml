@@ -4,7 +4,7 @@
 	<template priority="26" id="invoice_discount_report" inherit_id="account.report_invoice_document">
 		 
 		<xpath expr="//th[@groups='sale.group_discount_per_so_line']" position="before">
-			<th  	groups="sale.group_discount_per_so_line">Total</th>
+			<th  t-if="o.disc_total != 0.0"	groups="sale.group_discount_per_so_line">Total</th>
 			<th t-if="o.disc_total != 0.0" class="text-right" groups="sale.group_discount_per_so_line">Disc.</th>
 		</xpath>
 	
