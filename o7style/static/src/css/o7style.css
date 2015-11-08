@@ -10,5 +10,5 @@ ul .dropdown-menu{background-image:linear-gradient(to bottom,#646060,#262626)}
 .openerp .oe_application .oe_breadcrumb_title>*{font-size:16px!important}
 .openerp .oe_followers button.oe_follower { width: 120px; }
 .openerp button, .openerp .oe_button, .openerp .oe_highlight { padding: 3px 9px; font-size: 12px; }
-.openerp ul.oe_form_status li > .label, .openerp ul.oe_form_status_clickable li > .label {font-size: 80% !important;}
+.openerp ul.oe_form_status li > .label, .openerp ul.oe_form_status_clickable li > .label {font-size: 80% !important; padding-left: 16px !important;}
 /*----------------- OpenERP 7 Style -------------*/
