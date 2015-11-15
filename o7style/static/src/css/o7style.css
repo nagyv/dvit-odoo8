@@ -9,4 +9,5 @@
 .openerp .oe_followers button.oe_follower { width: 120px; }
 .openerp button, .openerp .oe_button, .openerp .oe_highlight { padding: 3px 9px; font-size: 12px; }
 .openerp ul.oe_form_status li > .label, .openerp ul.oe_form_status_clickable li > .label {font-size: 80% !important; padding-left: 16px !important;}
+.openerp .oe_form_sheetbg {padding: 45px 0;} .openerp .oe_form header{position: fixed;z-index: 1; width:99%;} 
 /*----------------- OpenERP 7 Style -------------*/
