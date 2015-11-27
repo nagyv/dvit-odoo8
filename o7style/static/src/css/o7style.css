@@ -14,4 +14,5 @@
 .openerp .oe_form > :not(.oe_form_nosheet) header ul:not(.oe_tooltip_technical):not(.oe_dropdown_menu), .openerp .oe_form > .oe_form_nosheet header ul:not(.oe_tooltip_technical):not(.oe_dropdown_menu){float: inherit; padding-left: 6%; padding-right: 6%;}
 .openerp .oe_form .oe_form_group {margin-top:16px !important;}
 .openerp .oe_leftbar > div a.oe_logo img { max-height: 120px !important;}
+.openerp .oe_view_manager_new .oe_form_nosheet > header {position:relative !important;}
 /*----------------- OpenERP 7 Style -------------*/
