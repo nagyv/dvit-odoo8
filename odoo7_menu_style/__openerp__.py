@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 
 {
-    'name': 'Auto Hide Leftbar',
+    'name': 'OpenERP 7 style',
     'version': '1.0',
         'sequence': 1,
     'category': 'Web',
-    'summary': 'Auto Hide Secondary menu using simple CSS',
-    'description':"Auto Hide Secondary menu",
+    'summary': '',
+    'description':"",
     'author': 'Dvit',
     'website': 'https://www.dvit.me',
     'depends': ['web',

@@ -1,31 +1,32 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Insurance",
+    'name': "End Services Benfits",
 
     'summary': """
-        Create Insurance & Medical insurance over employee contract """,
+        calculation of end of services benefits""",
 
     'description': """
-    """,
+              """,
 
     'author': "Dvit",
-    'website': "http://www.Dvit.com",
+    'website': "https://www.dvit.me",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/openerp/addons/base/module/module_data.xml
     # for the full list
-    'category': 'contract/insurance',
+    'category': 'Human Resources',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['hr','hr_contract','hr_payroll' ,'account'],
+    'depends': ['base', 'hr_payroll', 'hr', 'hr_contract', ],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'templates.xml',
-        'payroll_hr.xml',
+        'templates.xml','salary_rul.xml',
     ],
     # only loaded in demonstration mode
-
+    'demo': [
+        'demo.xml',
+    ],
 }

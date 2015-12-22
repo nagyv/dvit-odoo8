@@ -13,8 +13,8 @@ class insurance(models.Model):
     insurance_number=fields.Char(String='Insurance number')
     insurance_company= fields.Many2one('hr.employee', "Insurance company", readonly=False)
     insurance_amount=fields.Float("Insurance employee amount%", readonly=False)
-    insurance_persentage=fields.Float("insurance company persentage%",readonly=False)
-    insurance_madical=fields.Float("insurance medical amount",readonly=False)
+    insurance_percentage=fields.Float("insurance company persentage%",readonly=False)
+    insurance_medical=fields.Float("insurance medical amount",readonly=False)
 
 
 
