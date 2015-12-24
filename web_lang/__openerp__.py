@@ -25,7 +25,7 @@
     'category': 'Web',
     'summary': 'Web client lang based CSS',
     'description':"Multi-lang based CSS support for Web client to allow setting language direction (RTL,LTR) and fonts, colors.",
-    'author': 'M.Hagag@DVIT.ME',
+    'author': 'DVIT',
     'website': 'https://www.dvit.me',
     'depends': ['web',
                 ],

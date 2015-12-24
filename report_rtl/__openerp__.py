@@ -22,7 +22,7 @@
 {
     'name': 'Report RTL',
     'version': '1.0',
-    'author': 'Mohammed M. Hagag - m.hagag@dvit.me',
+    'author': 'DVIT',
     'sequence': 1,
     'summary': 'Report printing in RTL direction',
     'description':
