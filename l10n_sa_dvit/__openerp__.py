@@ -19,12 +19,14 @@
 ##############################################################################
 
 {
-    'name': 'Arabic CoA, Saudi Arabia',
+    'name': 'DVIT - Arabic CoA, Saudi Arabia',
     'version': '1.1',
     'sequence': 1,
     'author': 'DVIT.ME',
     'category': 'Localization/Account Charts',
     'description': """
+Note: This is the up-to-date enhanced version than the one included in odoo.
+
 Odoo Arabic localization for most arabic countries and Saudi Arabia.
 
 This initially includes chart of accounts of USA translated to Arabic.
