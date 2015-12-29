@@ -26,7 +26,7 @@
     'category': 'Localization',
     'description': "Payroll for Arabic countries and Saudi Arabia.",
     'website': 'http://www.dvit.me',
-    'depends': ['l10n_sa','hr_payroll','hr_payroll_account'],
+    'depends': ['l10n_sa_dvit','hr_payroll','hr_payroll_account'],
     'data': [
         'hr_payroll.xml',
         'hr_leave.xml',
