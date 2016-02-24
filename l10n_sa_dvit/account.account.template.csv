@@ -4,6 +4,10 @@ asset,1,Assets,view,user_type_current_asset,coa_basic,False
 current_asset,100,Current Assets,view,user_type_current_asset,asset,False
 cash_expenditure,1000,Cash and Bank,view,user_type_cash,current_asset,False
 undeposited_checks,11000,Undeposited Checks,liquidity,user_type_cash,cash_expenditure,True
+inventory,10040,Inventory,view,user_type_current_asset,current_asset,False
+incoming_sotck,100401,Incoming Stock,other,user_type_current_asset,inventory,False
+current_inventory,100402,Current Inventory,other,user_type_current_asset,inventory,False
+stock_out,100403,Outgoing Stock,other,user_type_current_asset,inventory,False
 receivables,1200,Receivable,view,user_type_current_asset,current_asset,False
 account_receivable,12001,Account Receivable,receivable,user_type_account_receivable,receivables,True
 fixed_asset,150,Fixed Assets,view,user_type_fixed_asset,asset,False
