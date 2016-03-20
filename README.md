@@ -1,7 +1,7 @@
 DVIT.me odoo8
 =====
 
-Various Odoo8 modules are contributed by DiamondVision DVIT.me http://dvit.me .
+Various Odoo8 modules contributed by DiamondVision DVIT.me http://dvit.me and other community ones.
 
 
 This repo includes:
