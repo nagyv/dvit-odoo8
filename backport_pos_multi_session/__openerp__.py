@@ -20,5 +20,5 @@
     'demo': [
         'demo/demo.xml',
     ],
-    'installable': True,
+    'installable': False,
 }
