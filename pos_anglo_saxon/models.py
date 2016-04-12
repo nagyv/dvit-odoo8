@@ -31,21 +31,18 @@ class pos_order(osv.osv):
                 if o_line.product_id.type != 'service' and o_line.product_id.valuation == 'real_time':
                     # if pos order amount > 0 = sale then stkacc account = stock out or account = current stock
                     # first check the product, if empty check the category
-                    stkacc = (( amount_total > 0 and o_line.product_id.property_stock_account_output) and \
-                    o_line.product_id.property_stock_account_output) or \
-                    (( amount_total < 0 and o_line.product_id.property_stock_inventory) and o_line.product_id.property_stock_inventory)
+                    stkacc = o_line.product_id.property_stock_account_output and o_line.product_id.property_stock_account_output
 
                     if not stkacc:
-                        stkacc = (( amount_total > 0 and o_line.product_id.categ_id.property_stock_account_output_categ) and \
-                    o_line.product_id.categ_id.property_stock_account_output_categ) or \
-                    (( amount_total < 0 and o_line.product_id.categ_id.property_stock_valuation_account_id) and \
-                        o_line.product_id.categ_id.property_stock_valuation_account_id)
+                        stkacc = o_line.product_id.categ_id.property_stock_account_output_categ and \
+                            o_line.product_id.categ_id.property_stock_account_output_categ
                     
                     #cost of goods account cogacc 
                     cogacc = o_line.product_id.property_account_expense and o_line.product_id.property_account_expense
                     if not cogacc:
                         cogacc = o_line.product_id.categ_id.property_account_expense_categ and \
                         o_line.product_id.categ_id.property_account_expense_categ
+
                 if cogacc and stkacc:
                     amount = o_line.qty * o_line.product_id.standard_price
                     line_vals= {
@@ -81,14 +78,14 @@ class pos_order(osv.osv):
                         #create move.lines to credit cogs and debit stock
                         caml = {
                             'account_id': cogacc.id,
-                            'credit': amount,
+                            'credit': -amount,
                             'debit': 0.0,
                             }
                         caml.update(line_vals)
                         daml = {
                             'account_id': stkacc.id,
                             'credit': 0.0,
-                            'debit': amount,
+                            'debit': -amount,
                             }
                         daml.update(line_vals)
                         move_line_obj.create(cr, uid, caml)
