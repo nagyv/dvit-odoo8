@@ -1,12 +1,14 @@
 {
-    'name': 'POS anglo-saxon fix',
-    'summary': 'create entries to complete anglo-saxon',
+    'name': 'POS Fixes',
+    'summary': 'Point of Sale Fixes',
     'describtion': """
-    complete the anglo-saxon journal entries missing in POS.
+    Fixes included:
+    - Fix POS invoices payments by reconciling them automatically on POS session closing to get them paid.
+    - Complete the anglo-saxon journal entries missing in POS.
     *ToDo*: 
         - Handle UoS convertion ex. selling in grams while product UoS is KG .
      """,
-    'version': '8.0.0.1',
+    'version': '8.0.0.2',
     'category': 'Point of Sale',
     'author': 'DVIT.me',
     'website': 'http://dvit.me',
@@ -14,6 +16,7 @@
     'depends': [
         'account_anglo_saxon',
         'account',
+        'account_voucher',
         'point_of_sale',
     ],
     'data': [],
