@@ -77,7 +77,7 @@ cost_of_goods_sold,50,Cost of Goods Sold,view,user_type_cogs,coa_basic,False
 53600_other_related_costs,53600,Other Job Related Costs,other,user_type_cogs,cost_of_goods_sold,False
 51100_product_shipping_cost,51100,Freight and Shipping Costs,other,user_type_cogs,cost_of_goods_sold,False
 52500_product_purchase_discount,52500,Purchase Discounts,other,user_type_cogs,cost_of_goods_sold,False
-52900_general_product_cost,52900,Purchases - Resale Items,other,user_type_cogs,cost_of_goods_sold,False
+52900_general_product_cost,52900,Product Costs,other,user_type_cogs,cost_of_goods_sold,False
 50300_commissions_paid,50300,Commissions Paid,other,user_type_cogs,cost_of_goods_sold,False
 53500_subcontracted_services,53500,Subcontractors Expense,other,user_type_cogs,cost_of_goods_sold,False
 52000_merchant_fees,52000,Merchant Account Fees,other,user_type_cogs,cost_of_goods_sold,False
