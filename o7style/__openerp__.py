@@ -7,7 +7,7 @@
     'category': 'Web',
     'summary': '',
     'description':"",
-    'author': 'M.Hagag@DVIT.ME',
+    'author': 'DVIT',
     'website': 'https://www.dvit.me',
     'depends': ['web',
                 ],

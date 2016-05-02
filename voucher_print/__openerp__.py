@@ -1,11 +1,11 @@
 {
     'name': 'voucher Print',
-    'version': '1.0',
+    'version': '8.0.1.0',
     'category': 'Accounting',
         'sequence': 1,
     'summary': "Print of payments",
     'description':"Print of payments",
-    'author': 'M.Hagag@DVIT.ME',
+    'author': 'DVIT.ME',
     'website': 'http://dvit.me',
     'website': 'http://www.dvit.me',
     'depends': ['account_voucher'],

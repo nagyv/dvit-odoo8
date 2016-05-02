@@ -20,7 +20,7 @@
 
 {
     'name': 'Sale Line no Name',
-    'version': '1.0',
+    'version': '8.0.1.0',
     'sequence': 1,
     'author': 'DVIT.ME',
     'category': 'Sales',

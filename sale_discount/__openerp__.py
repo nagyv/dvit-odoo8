@@ -7,7 +7,7 @@
     'category': 'Sales Management',
     'summary': 'Show discount total and total before discount on sales orders.',
     'description':"Show Discount Total and Total before Discount on Sales Orders.",
-    'author': 'M.Hagag@DVIT.ME',
+    'author': 'DVIT.ME',
     'website': 'https://www.dvit.me',
     'depends': ['sale','invoice_discount'],
     'data': ['discount_view.xml',
