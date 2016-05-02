@@ -1,2 +1,1 @@
-#
 import invoice_discount

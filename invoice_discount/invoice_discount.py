@@ -15,21 +15,10 @@ class my_model_init(osv.osv_memory):
         sale_settings_obj.execute()  # this call is actually changes the setting, you're missing this step @Yenthe ...
         return True
 
-# class my_model_init(models.TransientModel):
-#
-#     _name = 'my.model.init'
-#     @api.multi
-#     def _init_settings(self):
-#         sale_settings_pool = self.env['sale.config.settings']
-#         sale_settings_id = sale_settings_pool.create({'group_discount_per_so_line':True})
-#         sale_settings_obj = sale_settings_pool.browse(sale_settings_id)
-#         sale_settings_obj.execute()  # this call is actually changes the setting, you're missing this step.
-#         return True
-
 class account_invoice(osv.osv):
 
     _inherit = "account.invoice"
-    
+
     def _discount_all(self, cr, uid, ids, prop, unknow_none, unknow_dict):
         res = {}
         for invoice in self.browse(cr, uid, ids):
@@ -57,7 +46,7 @@ class account_invoice(osv.osv):
 class account_invoice_line(osv.osv):
 
     _inherit = "account.invoice.line"
-	
+
     def _discount_line(self, cr, uid, ids, prop, unknow_none, unknow_dict):
         res = {}
         for line in self.browse(cr, uid, ids):
@@ -76,4 +65,3 @@ class account_invoice_line(osv.osv):
         'disc_amount': fields.function(_discount_line, string='Discount', type="float", digits_compute= dp.get_precision('Account'), store=True),
         'total_wo_disc':fields.function(_total_line, string='Total', type="float", digits_compute= dp.get_precision('Account'), store=True),
     }
-
