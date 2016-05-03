@@ -92,6 +92,7 @@ class sale_order(osv.osv):
                     'recurring_interval': order.recurring_interval,
                     'recurring_rule_type': order.recurring_rule_type,
                     'recurring_next_date': order.recurring_next_date,
+                    'recurring_invoices': 1,
                     'installment_mode': 1,
                     'auto_confirm_invoices': 1,
                     'fix_price_invoices': 1,
