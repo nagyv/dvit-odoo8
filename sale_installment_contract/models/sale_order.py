@@ -45,12 +45,12 @@ class sale_order(osv.osv):
     @api.constrains('installments_count','recurring_interval','down_payment_fixed')
     def _check_constrains(self):
         if self.installment_sale:
-            if  self.installments_count < 2:
-                raise ValidationError("Number of Installments must be more than 1")
+            if  self.installments_count < 3:
+                raise ValidationError("Number of Installments must be more than 2")
             if self.recurring_interval < 1:
                 raise ValidationError("Repeat every should be 1 or more")
-            if not self.down_payment_fixed and self.down_payment_amount > 99:
-                raise ValidationError("Percent payment can not exceed 99%")
+            if not self.down_payment_fixed and self.down_payment_amount > 80:
+                raise ValidationError("Percent payment can not exceed 80%")
 
     def action_button_confirm(self, cr, uid, ids, context=None):
         super(sale_order, self).action_button_confirm(cr, uid, ids, context=context)
