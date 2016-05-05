@@ -20,15 +20,14 @@
 
 
 {
-    'name': 'Report RTL - fix website',
-    'version': '1.0',
+    'name': 'Report RTL - fix for website',
+    'version': '8.0.2.0',
     'author': 'DVIT',
-    'sequence': 1,
     'summary': 'Report printing in RTL direction',
     'description':
         """Install only if you have website installed and want to fix RTL report printing .""",
     'depends': ['report','website_report','report_rtl'],
-    'auto_install': False,
+    'auto_install': True,
     'data': [
         'views/layout.xml',
     ],
