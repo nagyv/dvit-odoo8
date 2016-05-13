@@ -10,6 +10,7 @@ current_inventory,100402,Current Inventory,other,user_type_current_asset,invento
 stock_out,100403,Outgoing Stock,other,user_type_current_asset,inventory,False
 receivables,1200,Receivable,view,user_type_current_asset,current_asset,False
 account_receivable,12001,Account Receivable,receivable,user_type_account_receivable,receivables,True
+rejected_checks,120102,Rejected Checks,receivable,user_type_account_receivable,receivables,True
 fixed_asset,150,Fixed Assets,view,user_type_fixed_asset,asset,False
 15000_furniture_equipments,15000,Furniture and Equipment,other,user_type_fixed_asset,fixed_asset,False
 17000_accu_deprec,17000,Accumulated Depreciation,other,user_type_accumulated_depreciation,fixed_asset,False
