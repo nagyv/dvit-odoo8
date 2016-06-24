@@ -16,4 +16,7 @@ to reset all auto reconciled lines.
     'version': '8.0.0.1',
     'depends': ['account_voucher'],
     'data': ['views.xml'],
+    'installable': True,
+    'auto_install': True,
+    'application': False,
 }

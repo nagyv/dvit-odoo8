@@ -1,5 +1,3 @@
-
-
 from openerp.osv import osv, fields, orm
 from openerp.tools.float_utils import float_round as round
 
@@ -7,29 +5,30 @@ from openerp.tools.float_utils import float_round as round
 class pos_order(osv.osv):
     _inherit = "pos.order"
 
-    def _create_account_move_line(self, cr, uid, ids, session=None, move_id=None, context=None):
-        super(pos_order, self)._create_account_move_line(
-            cr, uid, ids, None, None, context=context)
-
+    def _create_account_move_line(self, cr, uid, ids,
+                                  session=None, move_id=None, context=None):
+        super(pos_order, self)._create_account_move_line(cr, uid,
+                                                         ids, None,
+                                                         None, context=context)
         pos_order_obj = self.pool.get('pos.order')
         account_move_obj = self.pool.get('account.move')
-
         move_line_obj = self.pool.get('account.move.line')
 
         for order in self.browse(cr, uid, ids, context=context):
-
             session = order.session_id
-
             if move_id is None:
                 # Create an entry for the sale
-                move_id = pos_order_obj._create_account_move(cr, uid, session.start_at,
-                                                             session.name, session.config_id.journal_id.id, company_id, context=context)
+                move_id = pos_order_obj._create_account_move(cr,
+                                                             uid,
+                                                             session.start_at,
+                                                             session.name,
+                                                             session.config_id.journal_id.id,
+                                                             company_id,
+                                                             context=context)
 
             move = account_move_obj.browse(
                 cr, uid, move_id, context=context)
-
             amount_total = order.amount_total
-
             for o_line in order.lines:
                 if o_line.product_id.type != 'service' and o_line.product_id.valuation == 'real_time':
                     # if pos order amount > 0 = sale then stkacc account = stock out or account = current stock

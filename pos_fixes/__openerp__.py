@@ -1,11 +1,11 @@
 {
     'name': 'POS Fixes',
     'summary': 'Point of Sale Fixes',
-    'describtion': """
+    'description': """
     Fixes included:
     - Fix POS invoices payments by reconciling them automatically on POS session closing to get them paid.
     - Complete the anglo-saxon journal entries missing in POS.
-    *ToDo*: 
+    *ToDo*:
         - Handle UoS convertion ex. selling in grams while product UoS is KG .
      """,
     'version': '8.0.0.2',
