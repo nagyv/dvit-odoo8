@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    <template priority="26" id="sale_driver_report" inherit_id="sale.report_saleorder_document">
+    <xpath expr="//p[@t-field='o.note']" position="after">
+      <p t-if="driver_id">
+          <strong>Driver:</strong>
+          <span t-field="driver_id"/>
+      </p>
+    </xpath>
+    </template>
+    </data>
+</openerp>
