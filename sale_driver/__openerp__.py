@@ -2,12 +2,12 @@
 
 {
     'name': 'Sale driver person',
-    'version': '8.0.0.1',
+    'version': '8.0.1.0',
     'category': 'Sales Management',
     'summary': 'Add driver on sale order',
     'author': 'DVIT.ME',
     'website': 'https://www.dvit.me',
-    'depends': ['sale'],
+    'depends': ['sale','account'],
     'data': ['sale_driver.xml',
              'views/report_driver.xml'],
     'installable': True,
