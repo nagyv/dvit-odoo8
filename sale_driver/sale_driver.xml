@@ -17,7 +17,9 @@
             <field name="inherit_id" ref="sale.view_sales_order_filter"/>
             <field name="arch" type="xml">
                 <filter string="Salesperson" position="after">
-                    <filter string="Driver" context="{'group_by':'driver_id'}"/>
+                    <filter string="Driver" 
+                        attrs="{'readonly':[('state','!=','draft')]}" 
+                        context="{'group_by':'driver_id'}"/>
                 </filter>
                 </field>
         </record>
