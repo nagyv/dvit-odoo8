@@ -7,10 +7,7 @@ class pos_order(models.Model):
     _inherit = "pos.order"
 
     def create_picking(self, cr, uid, ids, context=None):
-        '''this call will create pickings for normal products'''
-        super(pos_order, self).create_picking(
-            cr, uid, ids, context=context)
-        ''' Below code will create another picking for packs'''
+        ''' Below code will create additional picking for packs'''
         picking_obj = self.pool['stock.picking']
         partner_obj = self.pool['res.partner']
         move_obj = self.pool['stock.move']
@@ -40,11 +37,14 @@ class pos_order(models.Model):
             elif picking_type:
                 if not picking_type.default_location_dest_id:
                     raise osv.except_osv(_('Error!'), _(
-                        'Missing source or destination location for picking type %s. Please configure those fields and try again.' % (picking_type.name,)))
+                        'Missing source or destination location for picking \
+                        type %s. Please configure those fields and try again.'
+                        % (picking_type.name,)))
                 destination_id = picking_type.default_location_dest_id.id
             else:
-                destination_id = partner_obj.default_get(cr, uid, [
-                                                         'property_stock_customer'], context=context)['property_stock_customer']
+                destination_id = partner_obj.default_get(
+                    cr, uid, ['property_stock_customer'],
+                    context=context)['property_stock_customer']
 
             for line in order.lines:
                 if line.product_id.pack:
@@ -80,4 +80,9 @@ class pos_order(models.Model):
                                 cr, uid, move_list, context=context)
                             move_obj.action_done(
                                 cr, uid, move_list, context=context)
+
+        '''this call will create original pickings for normal products'''
+        super(pos_order, self).create_picking(
+            cr, uid, ids, context=context)
+
         return True
