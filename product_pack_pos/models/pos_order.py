@@ -7,21 +7,23 @@ class pos_order(models.Model):
     _inherit = "pos.order"
 
     def create_picking(self, cr, uid, ids, context=None):
-        '''this call will create pickings for normal products'''
-        super(pos_order, self).create_picking(
-            cr, uid, ids, context=context)
         ''' Below code will create another picking for packs'''
         picking_obj = self.pool['stock.picking']
         partner_obj = self.pool['res.partner']
         move_obj = self.pool['stock.move']
+        packs_exist = False
 
         for order in self.browse(cr, uid, ids, context=context):
+            for line in order.lines:
+                if line.product_id.pack:
+                    packs_exist = True
+
             addr = order.partner_id and partner_obj.address_get(
                 cr, uid, [order.partner_id.id],
                 ['delivery']) or {}
             picking_type = order.picking_type_id
             picking_id = False
-            if picking_type:
+            if picking_type and packs_exist:
                 picking_id = picking_obj.create(cr, uid, {
                     'origin': order.name,
                     'partner_id': addr.get('delivery', False),
@@ -43,41 +45,48 @@ class pos_order(models.Model):
                         'Missing source or destination location for picking type %s. Please configure those fields and try again.' % (picking_type.name,)))
                 destination_id = picking_type.default_location_dest_id.id
             else:
-                destination_id = partner_obj.default_get(cr, uid, [
-                                                         'property_stock_customer'], context=context)['property_stock_customer']
+                destination_id = partner_obj.default_get(
+                    cr, uid, ['property_stock_customer'],
+                    context=context)['property_stock_customer']
 
-            for line in order.lines:
-                if line.product_id.pack:
-                    for pack_line in line.product_id.pack_line_ids:
+            if packs_exist:
+                for line in order.lines:
+                    if line.product_id.pack:
+                        for pack_line in line.product_id.pack_line_ids:
 
-                        move_list = []
+                            move_list = []
 
-                        move_list.append(move_obj.create(cr, uid, {
-                            'name': pack_line.product_id.name,
-                            'product_uom': pack_line.product_id.uom_id.id,
-                            'product_uos': pack_line.product_id.uom_id.id,
-                            'picking_id': picking_id,
-                            'picking_type_id': picking_type.id,
-                            'product_id': pack_line.product_id.id,
-                            'product_uos_qty': abs(pack_line.quantity * line.qty),
-                            'product_uom_qty': abs(pack_line.quantity * line.qty),
-                            'state': 'draft',
-                            'location_id': location_id if line.qty >= 0 else destination_id,
-                            'location_dest_id': destination_id if line.qty >= 0 else location_id,
-                        }, context=context))
+                            move_list.append(move_obj.create(cr, uid, {
+                                'name': pack_line.product_id.name,
+                                'product_uom': pack_line.product_id.uom_id.id,
+                                'product_uos': pack_line.product_id.uom_id.id,
+                                'picking_id': picking_id,
+                                'picking_type_id': picking_type.id,
+                                'product_id': pack_line.product_id.id,
+                                'product_uos_qty': abs(pack_line.quantity * line.qty),
+                                'product_uom_qty': abs(pack_line.quantity * line.qty),
+                                'state': 'draft',
+                                'location_id': location_id if line.qty >= 0 else destination_id,
+                                'location_dest_id': destination_id if line.qty >= 0 else location_id,
+                            }, context=context))
 
-                        if picking_id:
-                            picking_obj.action_confirm(
-                                cr, uid, [picking_id], context=context)
-                            picking_obj.force_assign(
-                                cr, uid, [picking_id], context=context)
-                            picking_obj.action_done(
-                                cr, uid, [picking_id], context=context)
-                        elif move_list:
-                            move_obj.action_confirm(
-                                cr, uid, move_list, context=context)
-                            move_obj.force_assign(
-                                cr, uid, move_list, context=context)
-                            move_obj.action_done(
-                                cr, uid, move_list, context=context)
+                            if picking_id:
+                                picking_obj.action_confirm(
+                                    cr, uid, [picking_id], context=context)
+                                picking_obj.force_assign(
+                                    cr, uid, [picking_id], context=context)
+                                picking_obj.action_done(
+                                    cr, uid, [picking_id], context=context)
+                            elif move_list:
+                                move_obj.action_confirm(
+                                    cr, uid, move_list, context=context)
+                                move_obj.force_assign(
+                                    cr, uid, move_list, context=context)
+                                move_obj.action_done(
+                                    cr, uid, move_list, context=context)
+
+        '''this call will create pickings for normal products'''
+        super(pos_order, self).create_picking(
+            cr, uid, ids, context=context)
+
         return True
