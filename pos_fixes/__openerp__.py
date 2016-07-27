@@ -16,7 +16,7 @@
 
         - Handle UoS convertion ex. selling in grams while product UoS is KG .
      """,
-    'version': '8.0.1.1',
+    'version': '8.0.2.0',
     'category': 'Point of Sale',
     'author': 'DVIT.me',
     'website': 'http://dvit.me',
