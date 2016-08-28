@@ -1,4 +1,4 @@
-openerp.pos_cash_pad = function(instance, local) {
+openerp.pos_pay_nobarcode = function(instance, local) {
 	var QWeb = instance.web.qweb;
 	var _t = instance.web._t;
 	function pad (str, max) {
@@ -33,7 +33,7 @@ openerp.pos_cash_pad = function(instance, local) {
 					$("li.button:nth-child(2)").on("click",function(){
 						clearInterval(thisInterval);
 					});
-				} ,12);
+				} ,50);
 			}
 
 			if(self.pos_widget.action_bar){
