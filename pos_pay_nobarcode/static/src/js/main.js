@@ -20,7 +20,7 @@ openerp.pos_cash_pad = function(instance, local) {
 					var change = paidTotal > dueTotal ? paidTotal - dueTotal : 0;
 
 					$("[class*='paymentline-input']").each(function(index, element){
-						if ($(this).val() > (dueTotal * 10)){
+						if ($(this).val() > (dueTotal * 100)){
 							$(this).val(0);
 						}
 					});
