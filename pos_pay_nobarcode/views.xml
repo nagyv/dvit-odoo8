@@ -1,0 +1,9 @@
+<openerp>
+	<data>
+		<template id="pos_index_inherit" name="petstore_assets" inherit_id="point_of_sale.index">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/pos_pay_nobarcde/static/src/js/main.js"/>
+            </xpath>
+        </template>
+	</data>
+</openerp>
