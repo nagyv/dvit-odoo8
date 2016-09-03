@@ -2,9 +2,7 @@
     'name': 'POS Fixes',
     'summary': 'Point of Sale Fixes',
     'description': """
-    This module now deppends on IngAdhoc's product_pack.
-
-    https://github.com/ingadhoc/product/tree/8.0/product_pack
+    This module **does not** deppend on IngAdhoc's product_pack anymore.
 
     Fixes included:
 
@@ -16,7 +14,7 @@
 
         - Handle UoS convertion ex. selling in grams while product UoS is KG .
      """,
-    'version': '8.0.2.0',
+    'version': '8.0.3.0',
     'category': 'Point of Sale',
     'author': 'DVIT.me',
     'website': 'http://dvit.me',
@@ -26,11 +24,13 @@
         'account',
         'account_voucher',
         'point_of_sale',
-        'product_pack_pos',
     ],
+    'conflicts': ['pos_anglo_saxon',
+                  'pos_invoice_reconcile'],
     'data': [],
     'demo': [],
     'installable': True,
-    'auto_install': True,
+    'auto_install': False,
     'application': False,
+
 }
