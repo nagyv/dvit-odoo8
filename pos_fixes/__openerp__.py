@@ -10,11 +10,12 @@
 
     - Complete the anglo-saxon journal entries missing in POS.
 
-    *ToDo*:
+    - Support & Process sales of product packs by IngAdhoc's product_pack.
 
-        - Handle UoS convertion ex. selling in grams while product UoS is KG .
+    - prevent barcode on payment screen by preventing payments greater than order amount * 100 .
+
      """,
-    'version': '8.0.3.0',
+    'version': '8.0.3.5',
     'category': 'Point of Sale',
     'author': 'DVIT.me',
     'website': 'http://dvit.me',
@@ -27,7 +28,7 @@
     ],
     'conflicts': ['pos_anglo_saxon',
                   'pos_invoice_reconcile'],
-    'data': [],
+    'data': ['views.xml'],
     'demo': [],
     'installable': True,
     'auto_install': True,
