@@ -11,7 +11,7 @@ Sale journal per team and user, to allow reporting sales per team, department an
 'author': 'DVIT.me',
 'website': 'http://dvit.me',
 'license': 'AGPL-3',
-'depends': ['sale', 'sales_team'],
+'depends': ['sale'],
 'data': ['templates.xml',],
 'installable': True,
 'application': False,
