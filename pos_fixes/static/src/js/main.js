@@ -33,7 +33,7 @@ openerp.pos_fixes = function(instance, local) {
 					$("li.button:nth-child(2)").on("click",function(){
 						clearInterval(thisInterval);
 					});
-				} ,50);
+				} ,15);
 			}
 
 			if(self2.pos_widget.action_bar){
